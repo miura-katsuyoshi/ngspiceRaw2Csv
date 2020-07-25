@@ -16,3 +16,5 @@ Vin IN VSS dc 0.0 PWL(0n 0.0 10n 0.0 20n 1.0 60n 1.0 70n 0.0 100n 0.0)
 Mn OUT IN VSS VSS nmos L=1.0u W=10u
 Mp OUT IN VDD VDD pmos L=1.0u W=10u
 Cload OUT VSS 1p
+
+.end
