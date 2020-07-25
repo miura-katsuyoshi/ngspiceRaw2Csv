@@ -1,7 +1,7 @@
 * Spice circuit to generate test.raw
 
 .temp 27
-.options post=2
+.option post=2
 
 .model nmos NMOS level=6
 .model pmos PMOS level=6
