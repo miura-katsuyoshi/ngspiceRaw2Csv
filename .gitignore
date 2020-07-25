@@ -1,1 +1,5 @@
-
+*~
+*.bak
+ngspiceRaw2Csv
+out.csv
+out.raw

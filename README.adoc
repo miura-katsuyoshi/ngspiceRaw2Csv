@@ -10,7 +10,7 @@ This command (ngspiceRaw2Csv) converts RAW format file of ngspice into CSV (comm
 
 It reads ngspice RAW file from the standard input and write CSV file into the standard output.
 
-When it is invoked without any arguments, it write the all fields.  When it is invoked with arguments, it writes the only specified fields.
+When it is invoked without any arguments, it writes the all fields.  When it is invoked with arguments, it writes the only specified fields.
 
 == Build and install
 
