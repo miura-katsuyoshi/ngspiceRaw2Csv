@@ -1,0 +1,49 @@
+= ngspiceRaw2Csv: Convert ngspice raw file to csv
+Katsuyoshi Miura <miura.katsuyoshi@gmail.com>
+v1.0, 2020-07-25
+:toc:
+:imagesdir: Images
+
+== Description
+
+This command (ngspiceRaw2Csv) converts RAW format file of ngspice into CSV (comma separated values) format.
+
+It reads ngspice RAW file from the standard input and write CSV file into the standard output.
+
+When it is invoked without any arguments, it write the all fields.  When it is invoked with arguments, it writes the only specified fields.
+
+== Build and install
+
+Type
+
+ make
+
+in the build directory, and copy the executable binary to a binary directory such as /usr/local/bin or your working directory.
+
+ sudo cp ngspiceRaw2Csv /usr/local/bin/
+
+== Usage
+
+ ngspiceRaw2Csv [FIELDS...] < RAW_FILE > CSV_FILE
+
+FIELDS:: ngspice variables such as time, 'v(in)', or 'i(vdd)'.  Variables are separated by spaces.  Variables including parentheses must be quoted.
++
+When no FIELDS are specified, all variables are output.
+
+RAW_FILE:: RAW format file of ngspice
+
+CSV_FILE:: CSV (comma separated values) file
+
+== Attention
+
+* ngspice RAW format depends on the machine architecture: double precision floating expression format and byte order.  The ngspice command and this comand (ngspiceRaw2Csv) must be run on the same architecture machines.
+
+* SPICE ignores the case of variable names.  Therefore, the specified arguments are converted to lowercase, then compared with variable names in the RAW format file.
+
+== Example
+
+ ngspice -a -b -r out.raw test.cir
+ ngspiceRaw2Csv time 'v(in)' 'v(out)' < out.raw > out.csv
+
+
+
